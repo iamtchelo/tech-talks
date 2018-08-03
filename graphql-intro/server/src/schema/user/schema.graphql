@@ -1,0 +1,28 @@
+type Repository {
+  name: String
+  forks: Int
+  stargazers_count: String
+  watchers_count: Int
+  language: String
+  created_at: String
+}
+
+type User {
+  login: String
+  name: String
+  followers: Int
+  following: Int
+  avatar_url: String
+  company: String
+  location: String
+  email: String
+  public_repos: Int
+  public_gists: Int
+  created_at: String
+  updated_at: String
+  repositories: [Repository]!
+}
+
+type Query {
+  user(username: String!): User!
+}

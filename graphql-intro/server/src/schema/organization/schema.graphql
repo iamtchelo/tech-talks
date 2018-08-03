@@ -1,0 +1,17 @@
+type Organization {
+  name: String
+  company: String
+  blog: String
+  location: String
+  email: String
+  avatar_url: String
+  description: String
+  public_repos: Int
+  created_at: String,
+  repositories: [Repository]!
+  members: [User]!
+}
+
+type Query {
+  organization(username: String!): Organization!
+}
