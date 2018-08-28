@@ -5,6 +5,7 @@ const HeaderWrapper = styled('header')`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   padding: 20px 0;
   width: 100%;
   background: #4E0250;
@@ -34,11 +35,13 @@ const InputSearch = styled('input')`
   background: white;
 `;
 
-const Header = () => (
+const Header = ({ search, setSearch }) => (
   <HeaderWrapper>
     <Container>
       <Title>GraphQL Client</Title>
-      <InputSearch 
+      <InputSearch
+        value={search}
+        onChange={e => setSearch(e.target.value)}
         type="search"
         placeholder="Search on github and youtube" />
     </Container>
