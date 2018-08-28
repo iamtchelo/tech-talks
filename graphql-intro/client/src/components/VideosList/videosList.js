@@ -13,11 +13,12 @@ const VideosWrapper = styled('section')`
 const Title = styled('h1')`
   display: block;
   padding: 10px 0;
+  margin-bottom: 30px;
   border-bottom: 1px solid #CCC;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #4E0250;
-`
+`;
 
 const Video = styled('div')`
   position: relative;
@@ -45,11 +46,17 @@ const Video = styled('div')`
 const VideoImage = styled('img')`
 `;
 
-const VideosList = () => (
+const VideosList = ({ data }) => (
   <Wrapper>
     <Title>Youtube</Title>
     <VideosWrapper>
-      {/* videos here */}
+      {data.map(v => (
+        <Video key={v.id}>
+          <VideoImage
+            width={280}
+            src={`https://img.youtube.com/vi/${v.id}/0.jpg`} />
+        </Video>
+      ))}
     </VideosWrapper>
   </Wrapper>
 );

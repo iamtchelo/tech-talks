@@ -53,11 +53,22 @@ const RepositoryLabel = styled('span')`
   transform: rotate(-25deg);
 `;
 
-const GithubList = () => (
+const GithubList = ({ data }) => (
   <Wrapper>
     <Title>Github</Title>
     <GithubWrapper>
-      {/* repositories here */}
+      {data.repositories.map(r => (
+        <Repository key={r.name}>
+          <RepositoryImage src={RepositoryIcon} width={70} />
+          <RepositoryName>{r.name}</RepositoryName>
+          <RepositoryInfo>
+            {r.language && (
+              <RepositoryLabel>{r.language}</RepositoryLabel>
+            )}
+            <RepositoryLabel>{`${r.stargazers_count} Stars`}</RepositoryLabel>
+          </RepositoryInfo>
+        </Repository>
+      ))}
     </GithubWrapper>
   </Wrapper>
 );
