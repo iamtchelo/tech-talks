@@ -54,7 +54,9 @@ const VideosList = ({ data }) => (
         <Video key={v.id}>
           <VideoImage
             width={280}
-            src={`https://img.youtube.com/vi/${v.id}/0.jpg`} />
+            alt={v.title}
+            src={`https://img.youtube.com/vi/${v.id}/0.jpg`}
+          />
         </Video>
       ))}
     </VideosWrapper>

@@ -14,7 +14,8 @@ const Loading = () => (
   <LoadingWrapper>
     <LoadingStyled
       src={LoadingGIF}
-      width={100} />
+      width={100}
+    />
   </LoadingWrapper>
 );
 

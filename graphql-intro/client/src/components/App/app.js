@@ -32,7 +32,8 @@ const App = ({ search, setSearch }) => (
   <AppWrapper>
     <Header
       search={search}
-      setSearch={setSearch} />
+      setSearch={setSearch}
+    />
     <Query query={searchQuery} variables={{ search }}>
       {({ loading, data }) => {
         if (loading) return <Loading />;
