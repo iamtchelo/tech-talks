@@ -43,7 +43,7 @@ const Header = ({ search, setSearch }) => (
         value={search}
         onChange={e => setSearch(e.target.value)}
         type="search"
-        placeholder="Search on github and youtube"
+        placeholder="Search by an organization on github"
       />
     </Container>
   </HeaderWrapper>
