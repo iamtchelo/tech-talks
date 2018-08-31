@@ -7,8 +7,7 @@ import VideosList from '../VideosList';
 import GithubList from '../GithubList';
 import { searchQuery } from '../../graphql';
 
-const AppWrapper = styled('section')`
-`;
+const AppWrapper = styled('section')``;
 
 const Container = styled('div')`
   width: 950px;
@@ -34,7 +33,10 @@ const App = ({ search, setSearch }) => (
       search={search}
       setSearch={setSearch}
     />
-    <Query query={searchQuery} variables={{ search }}>
+    <Query
+      query={searchQuery}
+      variables={{ search }}
+    >
       {({ loading, data }) => {
         if (loading) return <Loading />;
         if (data) return (

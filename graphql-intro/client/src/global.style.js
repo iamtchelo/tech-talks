@@ -11,4 +11,8 @@ injectGlobal`
     color: #333;
     font: 16px Arial, Helvetica, sans-serif;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;

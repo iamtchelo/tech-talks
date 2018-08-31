@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 const searchQuery = gql`
   query searchQuery($search: String!) {
     organization(username: $search) {
+      name
       repositories {
         name
         language

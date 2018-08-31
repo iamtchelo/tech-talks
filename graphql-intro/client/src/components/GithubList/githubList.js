@@ -4,6 +4,8 @@ import RepositoryIcon from '../../assets/img/repository.svg';
 
 const Wrapper = styled('section')``;
 
+const Link = styled('a')``;
+
 const GithubWrapper = styled('section')`
   display: flex;
   flex-flow: row wrap;
@@ -58,16 +60,25 @@ const GithubList = ({ data }) => (
     <Title>Github</Title>
     <GithubWrapper>
       {data.repositories.map(r => (
-        <Repository key={r.name}>
-          <RepositoryImage src={RepositoryIcon} width={70} />
-          <RepositoryName>{r.name}</RepositoryName>
-          <RepositoryInfo>
-            {r.language && (
-              <RepositoryLabel>{r.language}</RepositoryLabel>
-            )}
-            <RepositoryLabel>{`${r.stargazers_count} Stars`}</RepositoryLabel>
-          </RepositoryInfo>
-        </Repository>
+        <Link
+          target="_blank"
+          key={r.name}
+          href={`https://github.com/${data.name.toLowerCase()}/${r.name}`}
+        >
+          <Repository>
+            <RepositoryImage
+              src={RepositoryIcon}
+              width={70}
+            />
+            <RepositoryName>{r.name}</RepositoryName>
+            <RepositoryInfo>
+              {r.language && (
+                <RepositoryLabel>{r.language}</RepositoryLabel>
+              )}
+              <RepositoryLabel>{`${r.stargazers_count} Stars`}</RepositoryLabel>
+            </RepositoryInfo>
+          </Repository>
+        </Link>
       ))}
     </GithubWrapper>
   </Wrapper>
