@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'react-emotion';
 import PlayIcon from '../../assets/img/player.svg';
 
-const Wrapper = styled('section')`
-`;
+const Wrapper = styled('section')``;
+
+const Link = styled('a')``;
 
 const VideosWrapper = styled('section')`
   display: flex;
@@ -51,13 +52,19 @@ const VideosList = ({ data }) => (
     <Title>Youtube</Title>
     <VideosWrapper>
       {data.map(v => (
-        <Video key={v.id}>
-          <VideoImage
-            width={280}
-            alt={v.title}
-            src={`https://img.youtube.com/vi/${v.id}/0.jpg`}
-          />
-        </Video>
+        <Link
+          target="_blank"
+          key={v.id}
+          href={`https://youtube.com/watch?v=${v.id}`}
+        >
+          <Video>
+            <VideoImage
+              width={280}
+              alt={v.title}
+              src={`https://img.youtube.com/vi/${v.id}/0.jpg`}
+            />
+          </Video>
+        </Link>
       ))}
     </VideosWrapper>
   </Wrapper>
