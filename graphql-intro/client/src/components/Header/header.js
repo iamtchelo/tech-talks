@@ -42,7 +42,7 @@ const Header = ({ search }) => (
       <InputSearch
         defaultValue={search}
         type="search"
-        placeholder="Search on github and youtube"
+        placeholder="Search by an organization on github"
       />
     </Container>
   </HeaderWrapper>
