@@ -35,13 +35,12 @@ const InputSearch = styled('input')`
   background: white;
 `;
 
-const Header = ({ search, setSearch }) => (
+const Header = ({ search }) => (
   <HeaderWrapper>
     <Container>
       <Title>GraphQL Client</Title>
       <InputSearch
-        value={search}
-        onChange={e => setSearch(e.target.value)}
+        defaultValue={search}
         type="search"
         placeholder="Search on github and youtube"
       />

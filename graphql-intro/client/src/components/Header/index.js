@@ -1,3 +1,4 @@
 import Header from './header';
+import enhancer from './header.hoc';
 
-export default Header;
+export default enhancer(Header);
